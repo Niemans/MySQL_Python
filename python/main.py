@@ -27,7 +27,7 @@ while user == '':
                 password = ''
 
 try:
-    cnx = mysql.connector.connect(user = user, password = password, host = '127.0.0.1', database = 'dzielnica', autocommit = 0)
+    cnx = mysql.connector.connect(user = f"{user}", password = f"{password}", host = '127.0.0.1', database = 'dzielnica', autocommit = 0)
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print('Brak dostępu, może wprowadzono złe hasło')

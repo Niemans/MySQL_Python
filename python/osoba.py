@@ -576,7 +576,7 @@ def os_main (cnx,notcommited):
             if(notcommited == 0 and pom == 1):
                 notcommited = pom
             show = 1
-        elif (help == '5' or help == 'reollback'):
+        elif (help == '5' or help == 'rollback'):
             cnx.rollback()
             notcommited = 0
             show = 1

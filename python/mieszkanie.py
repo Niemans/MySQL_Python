@@ -296,6 +296,7 @@ def miesz_delete(cursor):
 
             try:
                 cursor.callproc("delete_miesz", (dane[5],))
+                cursor.callproc("update_bud_liczba", (dzielnica, ulica, numer, dane[4]))
             except:
                 print("Najprawdopodobniej nie masz uprawnień do wykonywania tej operacji")
                 return 0
@@ -333,7 +334,7 @@ def miesz_main(cnx,notcommited):
             if (notcommited == 0 and pom == 1):
                 notcommited = pom
             show = 1
-        elif (help == '5' or help == 'reollback'):
+        elif (help == '5' or help == 'rollback'):
             cnx.rollback()
             notcommited = 0
             show = 1

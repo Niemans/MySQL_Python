@@ -418,7 +418,7 @@ def bud_update(cursor):
             try:
                 cursor.callproc("update_bud", (dzielnica, ulica, numer, numer2, kod))
             except:
-                print("Najprawdopodobniej nie masz uprawnień do wykonywania tej operacji")
+                print("Najprawdopodobniej nie masz uprawnień do wykonywania tej operacji\n")
                 return 0
             else:
                 print("udało się edytować r3cord")
@@ -455,7 +455,7 @@ def bud_main(cnx,notcommited):
             if (notcommited == 0 and pom == 1):
                 notcommited = pom
             show = 1
-        elif (help == '5' or help == 'reollback'):
+        elif (help == '5' or help == 'rollback'):
             cnx.rollback()
             notcommited = 0
             show = 0
